@@ -3,11 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/lib/bootstrap-icons/font/bootstrap-icons.min.css">
-    <title>Despensas</title>
+    <title>Despensa</title>
 </head>
 <body>
-    <h1>Despensas</h1>
+    <div class="container-lg p-3">
+        <div class="table-responsive">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-10"><h3>Itens da despensa</h3></div>
+                    <div class="col-sm-2">
+                        <button type="button" class="btn btn-dark"><i class="bi bi-share"></i></button>
+                        <button type="button" class="btn btn-success">Novo item</button>
+                    </div>
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Itens</th>
+                        <th>Quantidade</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Batata doce</td>
+                        <td>5 un</td>
+                        <td>
+                            <a class="edit" data-toggle="tooltip"><i class="bi bi-plus-circle-fill"></i></a>
+                            <a class="delete" data-toggle="tooltip"><i class="bi bi-trash-fill"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Leite Zero Lac</td>
+                        <td>3 cx</td>
+                        <td>
+                            <a class="edit" data-toggle="tooltip"><i class="bi bi-plus-circle-fill"></i></a>
+                            <a class="delete" data-toggle="tooltip"><i class="bi bi-trash-fill"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Whey Protein Barra 15g</td>
+                        <td>10 un</td>
+                        <td>
+                            <a class="edit" data-toggle="tooltip"><i class="bi bi-plus-circle-fill"></i></a>
+                            <a class="delete" data-toggle="tooltip"><i class="bi bi-trash-fill"></i></a>
+                        </td>
+                    </tr>      
+                </tbody>
+            </table>
+        </div>
+
+        <br>
+
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-dark"><a href="index.html"><i class="bi bi-arrow-return-left"></i> Voltar</a></button>
+        </div>
+
+    </div>     
 </body>
 </html>

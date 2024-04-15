@@ -9,16 +9,20 @@
     <title>Gerenciamento de Despensa</title>
 </head>
 <body>
-    <div class="container">
-        <div>
-            <button class="btn bi bi-app-indicator"></button>
-        </div>
-        <div class="container" id="botoes">
-            <div class="btn-group-vertical">
-                <button class="btn btn-secondary bi bi-box2-heart-fill"><a href="inventory.html"></a> Despensas</button>
-                <button class="btn btn-secondary bi bi-list-check"><a href="buy-list.html"></a> Listas de compra</button>
-                <button class="btn btn-secondary bi bi-journal-bookmark-fill"> Relatórios</button>
+    <div id="principal" class="container-fluid">
+        <div class="row">
+            <div class="col bg-secondary"></div>
+
+            <div id="botoes" class="col-8 bg-secondary">
+                <div class="btn-group-vertical ">
+                    <a href="inventory.html" class="btn btn-primary bi bi-box2-heart-fill"> Despensa</a>
+                    <a href="buy-list.html" class="btn btn-primary bi bi-list-check"> Listas de compra</a>
+                    <a href="inventory.html" class="btn btn-primary bi bi-journal-bookmark-fill"> Relatórios</a>
+                    <a href="inventory.html" class="btn btn-primary bi bi-app-indicator"> Notificações</a>
+                </div>
             </div>
+
+            <div class="col bg-secondary"></div>
         </div>
     </div>
 </body>

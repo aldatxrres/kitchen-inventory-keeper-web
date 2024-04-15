@@ -3,11 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/lib/bootstrap-icons/font/bootstrap-icons.min.css">
     <title>Listas de compras</title>
 </head>
 <body>
-    <h1>Listas de compras</h1>
+    <div class="container-lg p-3">
+        <div class="table-responsive">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-10"><h3>Listas de compras</h3></div>
+                    <div class="col-sm-2">
+                        <button type="button" class="btn btn-success">Nova lista</button>
+                    </div>
+                </div>
+            </div>
+            <table class="table">
+                <!-- <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead> -->
+                <tbody>
+                    <tr>
+                        <td>Compras churrasco</td>
+                        <td>
+                            <a class="edit" data-toggle="tooltip"><i class="bi bi-plus-circle-fill"></i></a>
+                            <a class="delete" data-toggle="tooltip"><i class="bi bi-trash-fill"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ceia de natal</td>
+                        <td>
+                            <a class="edit" data-toggle="tooltip"><i class="bi bi-plus-circle-fill"></i></a>
+                            <a class="delete" data-toggle="tooltip"><i class="bi bi-trash-fill"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Compras do mês</td>
+                        <td>
+                            <a class="edit" data-toggle="tooltip"><i class="bi bi-plus-circle-fill"></i></a>
+                            <a class="delete" data-toggle="tooltip"><i class="bi bi-trash-fill"></i></a>
+                        </td>
+                    </tr>      
+                </tbody>
+            </table>
+        </div>
+        
+        <br>
+
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-dark"><a href="index.html"><i class="bi bi-arrow-return-left"></i> Voltar</a></button>
+        </div>
+
+    </div>     
 </body>
 </html>
