@@ -1,29 +1,89 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/lib/bootstrap-icons/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="/css/index.css">
-    <title>Gerenciamento de Despensa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer"/>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="lib/bootstrap-icons/font/bootstrap-icons.min.css"> 
+    <link rel='stylesheet' href='/css/index.css'>
+    <link rel='stylesheet' href='/css/icons.css'>
+    
+    <title>Relatórios</title>
 </head>
 <body>
-    <div id="principal" class="container-fluid">
+    <header></header>
+    <main>
         <div class="row">
-            <div class="col bg-secondary"></div>
-
-            <div id="botoes" class="col-8 bg-secondary">
-                <div class="btn-group-vertical ">
-                    <a href="inventory.html" class="btn btn-primary bi bi-box2-heart-fill"> Despensa</a>
-                    <a href="buy-list.html" class="btn btn-primary bi bi-list-check"> Listas de compra</a>
-                    <a href="inventory.html" class="btn btn-primary bi bi-journal-bookmark-fill"> Relatórios</a>
-                    <a href="inventory.html" class="btn btn-primary bi bi-app-indicator"> Notificações</a>
+            <div class='col-lg-3'>
+                <div class="container">
+                    <div class="sidebar">
+    
+                        <div class='logo'>
+                            <span>Kinventory</span>
+                        </div>
+        
+                        <div class='menu'>
+                            <ul>
+                                <li><a href="inventory.html"><span class="bi bi-box-seam"></span> Despensa</a></li>
+        
+                                <li><a href='buy-list.html'><span class="bi bi-card-checklist""></span> Listas de compra</a></li>
+        
+                                <li><a href="index.html"><span class="bi bi-bar-chart-line"></span> <strong>Relatórios</strong></a></li>
+        
+                                <li><a href='notifications.html'><span class="bi bi-bell"></span> Notificações</a></li>
+                            </ul>
+                        </div>
+        
+                        <div class='user'>
+                            <div class='logo'></div>
+        
+                            <div class='info'>
+                                <div class='username'>
+                                    <span>Jane Doe</span>
+                                </div>
+        
+                                <div class='email'>
+                                    <span>user@user.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class='col-lg-9'>
+                <div class='container'>
+                    <div class="main">
+                        <div class='introduction'>
+                            <div class='title'>
+                                <h1>Relatórios</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Ícone</th>
+                                    <th scope="col">SKU</th>
+                                    <th scope="col">Descrição</th>
+                                    <th scope="col">Estoque</th>
+                                    <th scope="col">Ações</th>
+                                </tr>
+                            </thead>
 
-            <div class="col bg-secondary"></div>
+                            <tbody id="table_body_products"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+        
+    </main>
+
+    <footer></footer>
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM' crossorigin='anonymous'></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../assets/js/load_products.js"></script>
 </body>
 </html>
