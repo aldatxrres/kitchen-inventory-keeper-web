@@ -1,22 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => { 
-    const form = document.getElementById('form-inventory');
+    const form = document.getElementById('form-shopping-list');
 
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
-        const name = document.getElementById('name').value; 
+        const shoppingListName = document.getElementById('shoppingListName').value; 
 
-        try {
-            await axios.post('http://localhost:8000/inventory', { 
-                name: productName
-            });
-
-       
-            alert('Despensa cadastrada com sucesso.');
-
-        } catch (error) {
-            console.error('Erro ao cadastrar despensa:', error);
-            alert('Erro ao cadastrar despensa. Tente novamente mais tarde');
-        }
+        axiosWithToken('http://localhost:8000/api/shopping_list/', {
+            method: 'POST',
+            data: {
+                name: shoppingListName
+            }
+        })
+        .then(response => {
+            window.location.href = "./shopping_list.html"
+        })
+        .cath(error => {
+            console.error('Erro ao cadastrar lista de compras:', error);
+            alert('Erro ao cadastrar lista de compras. Tente novamente mais tarde');
+        });
     });
 });

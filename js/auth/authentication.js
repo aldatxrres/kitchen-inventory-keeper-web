@@ -1,10 +1,11 @@
 // Função para adicionar o token JWT em cada requisição
-function axiosWithToken(url, options) {
+function axiosWithToken(url, options, data={}) {
     var token = localStorage.getItem('accessToken');
     options.headers = {
-        'Authorization': 'JWT ' + token
+        'Authorization': 'JWT ' + token,
+        'Content-Type': 'application/json'
     };
-    return axios(url, options);
+    return axios(url, options, data);
 }
 
 async function checkTokenValidity() {

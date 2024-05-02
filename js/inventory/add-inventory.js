@@ -4,19 +4,20 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
-        const name = document.getElementById('name').value; 
+        const inventoryName = document.getElementById('inventoryName').value; 
 
-        try {
-            await axios.post('http://localhost:8000/inventory', { 
-                name: productName
-            });
-
-       
-            alert('Despensa cadastrada com sucesso.');
-
-        } catch (error) {
+        axiosWithToken('http://localhost:8000/api/inventory/', {
+            method: 'POST',
+            data: {
+                name: inventoryName
+            }
+        })
+        .then(response => {
+            window.location.href  = "./inventory.html"
+        })
+        .cath(error => {
             console.error('Erro ao cadastrar despensa:', error);
             alert('Erro ao cadastrar despensa. Tente novamente mais tarde');
-        }
+        });
     });
 });

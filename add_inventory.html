@@ -56,26 +56,50 @@
             </div>
             <div class='col-lg-9'>
                 <div class='container'>
-                    <div class="main">
+                    <div class='main'>
                         <div class='introduction'>
-                            <div class='title d-flex flex-wrap align-items-center justify-content-md-between'>
-                                <h1>Despensa</h1>
-                                <a href='./add_inventory.html' class='btn btn-primary'>Nova Despensa</a>
+                            <div class='title'>
+                                <h1>Nova Despensa</h1>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">ID</th>
-                                    <th scope="col">Nome</th>
-                                    <th scope="col">Ações</th>
-                                </tr>
-                            </thead>
+        
+                        <div class='register'>
+                            <form id='form-inventory'>
+                                <div class='steps'>
+                                    <div class='step step-1'>
+                                        <div class='title'>
+                                            <h2>Dados Básicos</h2>
+                                        </div>
+        
+                                        <div class='fields'>
+                                            <div class='row'>
+                                                <div class='col-lg-6 field'>
+                                                    <label for='inventoryName' class='form-label'>Nome da Despensa</label>
+        
+                                                    <input type='text' class='form-control' id='inventoryName' placeholder='' value=''>
 
-                            <tbody id="table_body_inventory"></tbody>
-                        </table>
+                                                    <span class='error'></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class='buttons justify-content-start'>
+                                    <div class='previous'>
+                                        <button type='button' class='btn btn-outline-danger' onclick="history.back()">Cancelar</button>
+                                    </div>    
+                                    <div class='submit'>
+                                        <button type='submit' class='btn btn-success'>Salvar</button>
+                                    </div>
+                                </div>
+
+                                <div class='results mt-3'>
+                                    <span class='success'></span>
+                                    <span class='error'></span>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -88,6 +112,6 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/js/auth/authentication.js"></script>
     <script src="/js/auth/user_data.js"></script>
-    <script src="/js/inventory/load-inventory.js"></script>
+    <script src="/js/inventory/add-inventory.js"></script>
 </body>
 </html>
