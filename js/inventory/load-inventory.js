@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => { //Executa o código abaixo quando o documento HTML for carregado
+document.addEventListener('DOMContentLoaded', () => { 
     const table_body_inventory = document.getElementById('table_body_inventory');
 
     async function loadInventory() { 
@@ -7,15 +7,15 @@ document.addEventListener('DOMContentLoaded', () => { //Executa o código abaixo
         })
         .then(response => {
             const inventories = response.data; 
-            
+
             inventories.results.forEach(inventory => { 
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
-                    <td>${inventory.id}</td>
-                    <td>${inventory.name}</td>
+                    <td><a href="inventory_items.html" onclick="setSelectedInventoryName('${inventory.name}', '${inventory.id}')">${inventory.id}</a></td>
+                    <td><a href="inventory_items.html" onclick="setSelectedInventoryName('${inventory.name}', '${inventory.id}')">${inventory.name}</a></td>
                     <td>
                         <a href="" class="text-primary"><i class="bi bi-share"></i> Compartilhar</a> | 
-                        <a href="" onclick="deleteInventory(`+inventory.id+`)" class="text-danger"><i class="bi bi-trash3"></i> Apagar</a>
+                        <a href="" onclick="deleteInventory(${inventory.id})" class="text-danger"><i class="bi bi-trash3"></i> Apagar</a>
                     </td>
                 `;
                 table_body_inventory.appendChild(tr);
@@ -29,6 +29,11 @@ document.addEventListener('DOMContentLoaded', () => { //Executa o código abaixo
 
     loadInventory();
 });
+
+async function setSelectedInventoryName(inventory_name, inventory_id){
+    localStorage.setItem('inventory_name', inventory_name);
+    localStorage.setItem('inventory_id', inventory_id);
+}
 
 function deleteInventory(inventory_id) {
     axiosWithToken('http://localhost:8000/api/inventory/'+inventory_id+'/', {

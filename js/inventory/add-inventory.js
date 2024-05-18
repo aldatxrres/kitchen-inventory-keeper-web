@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: inventoryName
             }
         })
-        .then(response => {
+        .then(response => { 
             window.location.href  = "./inventory.html"
         })
         .cath(error => {
