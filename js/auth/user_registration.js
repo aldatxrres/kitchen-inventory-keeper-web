@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', async () => {
     is_token_valid = await checkTokenValidity();
-    if (is_token_valid){
+    if (is_token_valid) {
         window.location.href = '/index.html';
     }
 });
 
-document.getElementById('registrationForm').addEventListener('submit', function(event) {
+document.getElementById('registrationForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
     var email = document.getElementById('email').value;
@@ -14,13 +14,13 @@ document.getElementById('registrationForm').addEventListener('submit', function(
     var password = document.getElementById('password').value;
     var re_password = document.getElementById('re_password').value;
 
-    axios.post('http://localhost:8000/auth/users/', {
-            email: email,
-            first_name: first_name,
-            last_name: last_name,
-            password: password,
-            re_password: re_password
-        })
+    axios.post('http://localhost:8000/api/auth/users/', {
+        email: email,
+        first_name: first_name,
+        last_name: last_name,
+        password: password,
+        re_password: re_password
+    })
         .then(response => {
             window.location.href = './login.html';
         })

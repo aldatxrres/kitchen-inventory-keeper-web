@@ -1,5 +1,5 @@
 // Função para adicionar o token JWT em cada requisição
-function axiosWithToken(url, options, data={}) {
+function axiosWithToken(url, options, data = {}) {
     var token = localStorage.getItem('accessToken');
     options.headers = {
         'Authorization': 'JWT ' + token,
@@ -11,8 +11,8 @@ function axiosWithToken(url, options, data={}) {
 async function checkTokenValidity() {
     var accessToken = localStorage.getItem('accessToken');
     if (accessToken) {
-        try{
-            const response = await axios.post('http://localhost:8000/auth/jwt/verify/', {
+        try {
+            const response = await axios.post('http://localhost:8000/api/auth/jwt/verify/', {
                 token: accessToken
             });
             if (response.status === 200) {
@@ -20,7 +20,7 @@ async function checkTokenValidity() {
             }
             return false;
         }
-        catch{
+        catch {
             localStorage.removeItem('accessToken');
             console.log("returning false...")
             return false;
