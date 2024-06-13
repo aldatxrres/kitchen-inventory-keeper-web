@@ -1,21 +1,26 @@
-document.addEventListener('DOMContentLoaded', () => { //Executa o código abaixo quando o documento HTML for carregado
+document.addEventListener('DOMContentLoaded', () => { 
     const table_body_shopping_list = document.getElementById('table_body_shopping_list');
 
-    async function loadInventory() { 
+    if (localStorage.getItem('list_name') !== null) {
+        localStorage.removeItem('list_name');
+        localStorage.removeItem('list_id');
+        localStorage.removeItem('list_item_id');
+    }
+
+    async function loadShoppingList() { 
         axiosWithToken('http://localhost:8000/api/shopping_list/', {
             method: 'GET'
         })
-        .then(response => {
+        .then(response => { 
             const shopping_lists = response.data; 
             
             shopping_lists.results.forEach(shopping_list => { 
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
-                    <td>${shopping_list.id}</td>
-                    <td>${shopping_list.name}</td>
+                    <td><a href="shopping_list_items.html" onclick="setSelectedListName('${shopping_list.name}', '${shopping_list.id}')">${shopping_list.id}</a></td>
+                    <td><a href="shopping_list_items.html" onclick="setSelectedListName('${shopping_list.name}', '${shopping_list.id}')">${shopping_list.name}</a></td>
                     <td>
-                        <a href="" class="text-primary"><i class="bi bi-share"></i> Compartilhar</a> | 
-                        <a href="" onclick="deleteShoppingList(`+shopping_list.id+`)" class="text-danger"><i class="bi bi-trash3"></i> Apagar</a>
+                        <a href="" onclick="deleteShoppingList(${shopping_list.id})" class="text-danger"><i class="bi bi-trash3"></i> Apagar</a>
                     </td>
                 `;
                 table_body_shopping_list.appendChild(tr);
@@ -27,8 +32,13 @@ document.addEventListener('DOMContentLoaded', () => { //Executa o código abaixo
         });
     }
 
-    loadInventory();
+    loadShoppingList();
 });
+
+async function setSelectedListName(list_name, list_id){
+    localStorage.setItem('list_name', list_name);
+    localStorage.setItem('list_id', list_id);
+}
 
 function deleteShoppingList(shopping_list_id) {
     axiosWithToken('http://localhost:8000/api/shopping_list/'+shopping_list_id+'/', {

@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => { 
     const table_body_inventory = document.getElementById('table_body_inventory');
 
+    if (localStorage.getItem('inventory_name') != null) {
+        localStorage.removeItem('inventory_name');
+        localStorage.removeItem('inventory_id');
+        localStorage.removeItem('inventory_item_id');
+    }
+
     async function loadInventory() { 
         axiosWithToken('http://localhost:8000/api/inventory/', {
             method: 'GET'
@@ -32,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function setSelectedInventoryName(inventory_name, inventory_id){
     localStorage.setItem('inventory_name', inventory_name);
-    localStorage.setItem('inventory_id', inventory_id);
+    localStorage.setItem('inventory_id', inventory_id); 
 }
 
 function deleteInventory(inventory_id) {

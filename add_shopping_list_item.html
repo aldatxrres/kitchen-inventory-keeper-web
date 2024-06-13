@@ -9,7 +9,7 @@
     <link rel='stylesheet' href='/css/index.css'>
     <link rel='stylesheet' href='/css/icons.css'>
     
-    <title>Despensa</title>
+    <title>Lista de compra</title>
 </head>
 <body>
     <header></header>
@@ -59,12 +59,12 @@
                     <div class='main'>
                         <div class='introduction'>
                             <div class='title'>
-                                <h1>Novo item</h1>
+                                <h1>Novo item da Lista de Compras</h1>
                             </div>
                         </div>
         
                         <div class='register'>
-                            <form id='form-inventory-item'>
+                            <form id='form-shopping-list'>
                                 <div class='steps'>
                                     <div class='step step-1'>
                                         <div class='title'>
@@ -74,19 +74,14 @@
                                         <div class='fields'>
                                             <div class='row'>
                                                 <div class='col-lg-6 field'>
-                                                    <label for='inventoryItemName' class='form-label'>Nome do Item</label>
+                                                    <label for='shoppingListName' class='form-label'>Nome do item</label>
         
-                                                    <input type='text' class='form-control' id='inventoryItemName' placeholder='' value=''>
+                                                    <input type='text' class='form-control' id='itemName' placeholder='' value=''>
                                                     <br>
 
-                                                    <label for='inventoryItemQuantity' class='form-label'>Quantidade</label>
+                                                    <label for='shoppingListName' class='form-label'>Quantidade</label>
         
-                                                    <input type='text' class='form-control' id='inventoryItemQuantity' placeholder='' value=''>
-                                                    <br>
-
-                                                    <label for='inventoryItemExpirationDate' class='form-label'>Data de vencimento</label>
-        
-                                                    <input type='date' class='form-control' id='inventoryItemExpirationDate' placeholder='' value=''>
+                                                    <input type='text' class='form-control' id='itemQty' placeholder='' value=''>
 
                                                     <span class='error'></span>
                                                 </div>
@@ -122,6 +117,6 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/js/auth/authentication.js"></script>
     <script src="/js/auth/user_data.js"></script>
-    <script src="/js/inventory/add-inventory-item.js"></script>
+    <script src="/js/shopping_list/add-list-item.js"></script>
 </body>
 </html>

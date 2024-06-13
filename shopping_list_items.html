@@ -9,7 +9,7 @@
     <link rel='stylesheet' href='/css/index.css'>
     <link rel='stylesheet' href='/css/icons.css'>
     
-    <title>Despensas</title>
+    <title>Itens Lista de Compra</title>
 </head>
 <body>
     <header></header>
@@ -25,9 +25,9 @@
         
                         <div class='menu'>
                             <ul>
-                                <li><a href="inventory.html"><span class="bi bi-box-seam"></span> <strong>Despensas</strong></a></li>
+                                <li><a href="inventory.html"><span class="bi bi-box-seam"></span> Despensas</a></li>
         
-                                <li><a href='shopping_list.html'><span class="bi bi-card-checklist""></span> Listas de compra</a></li>
+                                <li><a href='shopping_list.html'><span class="bi bi-card-checklist""></span> <strong>Listas de compra</strong></a></li>
         
                                 <li><a href="index.html"><span class="bi bi-bar-chart-line"></span> Relatórios</a></li>
         
@@ -59,8 +59,8 @@
                     <div class="main">
                         <div class='introduction'>
                             <div class='title d-flex flex-wrap align-items-center justify-content-md-between'>
-                                <h1>Despensas</h1>
-                                <a href='./add_inventory.html' class='btn btn-primary'>Nova Despensa</a>
+                                <h1 id="shopping_list_name"></h1>
+                                <a href='./add_shopping_list_item.html' class='btn btn-primary'>Novo item</a>
                             </div>
                         </div>
                     </div>
@@ -70,11 +70,12 @@
                                 <tr>
                                     <th scope="col">ID</th>
                                     <th scope="col">Nome</th>
+                                    <th scope="col">Quantidade</th>
                                     <th scope="col">Ações</th>
                                 </tr>
                             </thead>
 
-                            <tbody id="table_body_inventory"></tbody>
+                            <tbody id="table_body_shopping_list_items"></tbody>
                         </table>
                     </div>
                 </div>
@@ -88,6 +89,6 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/js/auth/authentication.js"></script>
     <script src="/js/auth/user_data.js"></script>
-    <script src="/js/inventory/load-inventory.js"></script>
+    <script src="/js/shopping_list/load-list-item.js"></script>
 </body>
 </html>

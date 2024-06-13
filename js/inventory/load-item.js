@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => { //Executa o código abaixo quando o documento HTML for carregado
+document.addEventListener('DOMContentLoaded', () => { 
     const table_body_inventory_items = document.getElementById('table_body_inventory_items');
 
     async function loadInventoryItems() { 
